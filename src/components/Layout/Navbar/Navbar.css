@@ -65,8 +65,12 @@
   text-transform: uppercase;
 }
 
-.nav-item:hover {
-  border-bottom: 5px solid #fff;
+.nav-active {
+  border-bottom: 3.5px solid #fff;
+}
+
+.nav-links:hover {
+  border-bottom: 3.5px solid #fff;
 }
 
 .nav-links {

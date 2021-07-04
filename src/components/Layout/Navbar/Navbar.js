@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { BsSearch } from 'react-icons/bs';
 import { RiShoppingBagLine } from 'react-icons/ri'
 import { AiOutlineUser } from 'react-icons/ai';
-import { GiCoffeeBeans} from 'react-icons/gi';
+import { GiCoffeeBeans } from 'react-icons/gi';
 import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
 
@@ -32,7 +32,7 @@ function Navbar() {
             <nav className='navbar'>
                 <div className='navbar-container container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
-                        <GiCoffeeBeans/> &nbsp; VINCENZO
+                        <GiCoffeeBeans /> &nbsp; VINCENZO
                     </Link>
                     <div className='menu-icon' onClick={handleClick}>
                         {click ? <FaTimes /> : <FaBars />}
@@ -44,28 +44,29 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link
+                            <NavLink
                                 to='/services'
                                 className='nav-links'
                                 onClick={closeMobileMenu}>
                                 Menu
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <Link
-                                to='/'
+                            <NavLink
+                                to='/shop'
                                 className='nav-links'
+                                activeClassName='nav-active'
                                 onClick={closeMobileMenu}>
                                 SHOP
-                            </Link>
+                            </NavLink>
                         </li>
                         <li className='nav-item'>
-                            <Link
+                            <NavLink
                                 to='/'
                                 className='nav-links'
                                 onClick={closeMobileMenu}>
                                 Brew Guide
-                            </Link>
+                            </NavLink>
                         </li>
                     </ul>
                     <ul className={click ? 'nav-menu nav-right active' : 'nav-menu nav-right'}>

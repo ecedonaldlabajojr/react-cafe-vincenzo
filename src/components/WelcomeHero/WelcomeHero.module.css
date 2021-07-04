@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
-  top: 0px;
+  position: relative;
+  /* top: -80px; */
+  margin-top: -80px;
   height: 100vh;
   width: 100%;
   background: url("../../images/coffee-hero-img-1.jpg") no-repeat center center;
