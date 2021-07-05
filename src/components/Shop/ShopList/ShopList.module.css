@@ -1,0 +1,14 @@
+.section__shoplist-wrapper {
+  padding: 100px 2%;
+  /* padding-left: 2rem;
+  padding-right: 2rem; */
+}
+
+.shopItems-container {
+  display: flex;
+  flex-direction: row;
+  max-width: 1400px;
+  margin: 0 auto;
+  /* flex-wrap: wrap; */
+  justify-content: flex-start;
+}
