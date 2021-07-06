@@ -21,7 +21,7 @@ heroSectionData[1] = {
     topLine: 'OUR PASSION',
     headline: 'FLAVORFUL COFFEE',
     description: 'Regardless of where you are in your coffee journey, flavor matters the most. Find what you like and learn to brew a good cup at home.',
-    imgStart: '',
+    imgStart: 'start',
     img: '../images/coffee-2.jpg',
     alt: 'Vault'
 };

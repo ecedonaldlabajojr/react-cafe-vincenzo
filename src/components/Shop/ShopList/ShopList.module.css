@@ -1,14 +1,22 @@
 .section__shoplist-wrapper {
-  padding: 100px 2%;
-  /* padding-left: 2rem;
-  padding-right: 2rem; */
+  padding: 100px 10px;
 }
 
 .shopItems-container {
   display: flex;
-  flex-direction: row;
+  flex-flow: row wrap;
   max-width: 1400px;
   margin: 0 auto;
-  /* flex-wrap: wrap; */
   justify-content: flex-start;
+}
+
+.shopItems-container {
+  margin: 0 auto;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.tree:last-child {
+  justify-self: start;
 }

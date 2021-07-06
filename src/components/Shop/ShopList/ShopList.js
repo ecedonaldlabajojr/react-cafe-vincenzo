@@ -18,6 +18,11 @@ const ShopList = () => {
                 <ShopItem item={sampleItem} />
                 <ShopItem item={sampleItem} />
                 <ShopItem item={sampleItem} />
+                <ShopItem item={sampleItem} />
+                <ShopItem item={sampleItem} />
+                <ShopItem item={sampleItem} />
+                <ShopItem item={sampleItem} />
+                <ShopItem item={sampleItem} />
             </div>
         </section>
     )
