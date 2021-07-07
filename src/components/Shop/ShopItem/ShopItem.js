@@ -11,7 +11,7 @@ const ShopItem = (props) => {
             <div className={styles["item__desc-wrapper"]}>
                 <p className={styles["item-name"]}>{name}</p>
                 <p className={styles["item-desc"]}>{description}</p>
-                <h4 className={styles["item-price"]}>₱ {price}</h4>
+                <h4 className={styles["item-price"]}>₱ {price.toFixed(2)}</h4>
             </div>
         </div>
     )

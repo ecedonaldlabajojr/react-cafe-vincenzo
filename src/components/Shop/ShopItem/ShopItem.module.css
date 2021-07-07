@@ -3,16 +3,16 @@
   flex-direction: column;
   justify-content: center;
   text-align: center;
-  margin: 0 10px 20px;
+  margin: 0 10px 30px;
   border-radius: 3.5px;
-  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 7px 10px rgba(0, 0, 0, 0.35);
   transition: 0.3s ease-in-out;
   padding-bottom: 20px;
   background: #f0f8fe;
 }
 
 .card img {
-  margin-bottom: 1rem;
+  max-width: 80%;
 }
 
 .item-name {
