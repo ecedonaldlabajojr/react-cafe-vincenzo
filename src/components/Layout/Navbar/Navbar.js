@@ -7,6 +7,7 @@ import { AiOutlineUser } from 'react-icons/ai';
 import { GiCoffeeBeans } from 'react-icons/gi';
 import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
+import CartDrawer from '../../Cart/CartDrawer';
 
 function Navbar() {
     const [click, setClick] = useState(false);
@@ -26,9 +27,20 @@ function Navbar() {
         return window.removeEventListener('resize', showButton)
     }, []);
 
+    const [showCartDrawer, setShowCartDrawer] = useState(false);
+    const showCartDrawerHandler = () => {
+        setShowCartDrawer(!showCartDrawer);
+    }
+
+    var body = document.body;
+    if (showCartDrawer) {
+        body.classList.add('no-scroll');
+    } else body.classList.remove('no-scroll');
+
 
     return (
         <IconContext.Provider value={{ color: '#fff' }}>
+            <CartDrawer onClick={showCartDrawerHandler} showCartDrawer={showCartDrawer} />
             <nav className='navbar'>
                 <div className='navbar-container container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
@@ -90,7 +102,7 @@ function Navbar() {
                             <Link
                                 to='/'
                                 className='nav-links'
-                                onClick={closeMobileMenu}>
+                                onClick={showCartDrawerHandler}>
                                 <RiShoppingBagLine className='nav-user-actions' />
                             </Link>
                         </li>
