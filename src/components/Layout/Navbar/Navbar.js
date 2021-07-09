@@ -99,12 +99,12 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link
+                            <span
                                 to='/'
                                 className='nav-links'
                                 onClick={showCartDrawerHandler}>
                                 <RiShoppingBagLine className='nav-user-actions' />
-                            </Link>
+                            </span>
                         </li>
                     </ul>
                 </div>

@@ -10,22 +10,23 @@
 }
 
 .cart {
+  display: flex;
+  flex-direction: column;
   position: fixed;
   top: 0;
   transform: translateX(100vw);
   width: 400px;
   height: 100vh;
-  /* background: #f9f9f9; */
   background: #ffffff;
-  padding: 10px 5px;
+  padding: 10px;
   text-align: center;
   z-index: 600;
-  transition: all 0.25s ease-in;
+  transition: all 0.2s ease-in;
 }
 
 .cart.show {
   transform: translateX(calc(100vw - 400px));
-  transition: all 0.25s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .cart-backdrop.show {
@@ -49,10 +50,59 @@
   padding-left: 10px;
 }
 
-.checkoutBtnWrapper {
+.drawer--header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.drawer--internal {
+  flex: 1;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.drawer--footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  padding: 0 10px;
+}
+.checkoutBtn {
   width: 100%;
-  display: block;
+  border: none;
+  background-color: #1a1a1a;
+  border-radius: 25px;
+  cursor: pointer;
+  font-family: "Nunito", sans-serif;
+  letter-spacing: 1.5px;
+  font-size: 16px;
+  color: #ffff;
+  height: 3rem;
+  transition: all 0.1s ease-out;
+}
+
+.checkoutIcon {
   position: absolute;
-  bottom: 1.5rem;
-  margin: auto;
+  font-size: 25px;
+  right: -10%;
+  opacity: 0;
+  transition: all 0.5s ease-out;
+}
+
+.checkoutBtn:hover + .checkoutIcon {
+  opacity: 1;
+  right: 10%;
+  transition: all 0.3s ease-out;
+}
+
+.checkoutBtn:hover {
+  transform: scale(1.03);
+  transition: all 0.1s ease-out;
 }

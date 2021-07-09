@@ -1,0 +1,49 @@
+.cart__item-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 1.5rem;
+}
+
+.cart__item-row:last-child {
+  margin-bottom: 0;
+}
+
+.item-imgWrapper {
+  max-width: 150px;
+}
+
+.item-info {
+  text-align: left;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding-left: 0.25rem;
+  height: 100%;
+}
+
+p {
+  line-height: 2.5;
+}
+
+.item-name {
+  font-weight: 700;
+}
+
+.item-action {
+  display: flex;
+  flex-grow: 0.25;
+  justify-content: center;
+  height: 100%;
+}
+.item-remove-btn {
+  border: none;
+  background-color: transparent;
+}
+
+.trashIcon {
+  font-size: 20px;
+}
