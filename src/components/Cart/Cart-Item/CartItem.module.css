@@ -1,3 +1,7 @@
+:root {
+  --iconHoverTime: 0.2s;
+}
+
 .cart__item-row {
   display: flex;
   flex-direction: row;
@@ -46,4 +50,10 @@ p {
 
 .trashIcon {
   font-size: 20px;
+  transition: all var(--iconHoverTime) ease-out;
+}
+
+.trashIcon:hover {
+  transform: scale(1.2);
+  transition: all var(--iconHoverTime) ease-out;
 }

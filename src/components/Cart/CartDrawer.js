@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ReactDOM from 'react-dom';
 import styles from './CartDrawer.module.css';
 import { GrClose } from 'react-icons/gr';
-import CartItem from './Cart-Item/CartItem';
 import { IoBagCheckOutline } from 'react-icons/io5';
+import CartItemsList from './Cart-List/CartItemsList';
+import CartContext from '../../store/cart-context';
 
 
 const CartBackdrop = (props) => {
@@ -11,6 +12,7 @@ const CartBackdrop = (props) => {
     return <div className={`${styles["cart-backdrop"]} ${showCartDrawer ? styles.show : ''}`} onClick={onCloseCart}></div>
 }
 const CartDrawerOverlay = (props) => {
+    const cartCtx = useContext(CartContext);
     return <React.Fragment>
         <div className={`${styles.cart} ${props.showCartDrawer ? styles.show : ''}`}>
             <div className={styles["drawer--header"]}>
@@ -18,11 +20,12 @@ const CartDrawerOverlay = (props) => {
                 <div className={styles.closeIconWrapper} onClick={props.onCloseCart}><GrClose className={styles.closeCartDrawer} /></div>
             </div>
             <div className={styles["drawer--internal"]}>
-                <CartItem itemId={"7t"} name='Brazil Cerrado' price={700} qty={1} imgUrl={'/images/shop-items/brazil-cerrado.png'} />
+                <CartItemsList />
             </div>
             <div className={styles["drawer--footer"]}>
+                <h3>Subtotal: ₱{cartCtx.totalPrice.toFixed(2)}</h3>
                 <button className={styles.checkoutBtn}>Check out</button>
-                <IoBagCheckOutline className={styles.checkoutIcon}/>
+                <IoBagCheckOutline className={styles.checkoutIcon} />
             </div>
         </div>
     </React.Fragment>

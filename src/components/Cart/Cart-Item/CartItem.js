@@ -4,12 +4,12 @@ import { BsTrashFill } from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib';
 
 const CartItem = (props) => {
-    const { name, price, qty, imgUrl } = props;
+    const { name, price, qty, img } = props;
     return (
         <IconContext.Provider value={{ color: 'black' }}>
             <div className={styles["cart__item-row"]}>
                 <div className={styles["item-imgWrapper"]}>
-                    <img src={imgUrl} alt={name} />
+                    <img src={img} alt={name} />
                 </div>
                 <div className={styles["item-info"]}>
                     <p className={styles["item-name"]}>{name}</p>
