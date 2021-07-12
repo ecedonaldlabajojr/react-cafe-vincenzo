@@ -13,8 +13,9 @@ const CartBackdrop = (props) => {
 }
 const CartDrawerOverlay = (props) => {
     const cartCtx = useContext(CartContext);
+    const cartClasses = `${styles.cart} ${props.showCartDrawer ? styles.show : ''}`;
     return <React.Fragment>
-        <div className={`${styles.cart} ${props.showCartDrawer ? styles.show : ''}`}>
+        <div className={cartClasses}>
             <div className={styles["drawer--header"]}>
                 <h2>Shopping Bag</h2>
                 <div className={styles.closeIconWrapper} onClick={props.onCloseCart}><GrClose className={styles.closeCartDrawer} /></div>

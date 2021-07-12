@@ -1,3 +1,6 @@
+:root {
+  --cartDrawerWidth: 500px;
+}
 .cart-backdrop {
   position: fixed;
   top: 0;
@@ -15,7 +18,7 @@
   position: fixed;
   top: 0;
   transform: translateX(100vw);
-  width: 500px;
+  width: var(--cartDrawerWidth);
   height: 100vh;
   background: #ffffff;
   padding: 10px;
@@ -25,7 +28,7 @@
 }
 
 .cart.show {
-  transform: translateX(calc(100vw - 500px));
+  transform: translateX(calc(100vw - var(--cartDrawerWidth)));
   transition: all 0.2s ease-out;
 }
 

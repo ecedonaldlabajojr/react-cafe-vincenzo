@@ -14,7 +14,7 @@ const cartReducer = (state, action) => {
         const newItem = action.payload;
         console.log(`ADD ITEM!!`);
         const updatedCartItems = [...state.items];
-        const existingItemIndex = updatedCartItems.findIndex(item => item._id === newItem._id);
+        const existingItemIndex = updatedCartItems.findIndex(item => item._id === newItem.itemId);
 
         let updatedTotalPrice = state.totalPrice + (+newItem.price)
 
@@ -27,9 +27,23 @@ const cartReducer = (state, action) => {
         }
 
     } else if (action.type === "REMOVE__ITEM") {
+        const itemId = action.payload;
         console.log(`REMOVE ITEM!!`);
-        return state;
+        let updatedCartItems = [];
+        const existingItemIndex = state.items.findIndex(item => item._id === itemId);
+        const existingItem = state.items[existingItemIndex];
 
+        if (existingItemIndex > -1) {
+            if (existingItem.qty === 1) {
+                updatedCartItems = state.items.filter(item => item._id !== itemId);
+            } else {
+                updatedCartItems = [...state.items];
+                updatedCartItems[existingItemIndex].qty--;
+            }
+            const updatedTotalPrice = state.totalPrice - existingItem.price;
+            return { items: updatedCartItems, totalPrice: updatedTotalPrice };
+        }
+        return state;
     } else if (action.type === "CLEAR__CART") {
         console.log(`CLEAR CART!!`);
         return state;
@@ -51,7 +65,8 @@ export const CartProvider = props => {
 
     const removeItem = itemId => {
         dispatchCartActions({
-            type: "REMOVE__ITEM"
+            type: "REMOVE__ITEM",
+            payload: itemId,
         })
     }
 
