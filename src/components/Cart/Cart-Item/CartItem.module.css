@@ -83,4 +83,10 @@ p {
   max-width: 50%;
   line-height: 24px;
   text-align: right;
+  font-size: 14px;
+}
+
+.item-qty input::-webkit-outer-spin-button,
+.item-qty input::-webkit-inner-spin-button {
+  margin-left: 8px;
 }

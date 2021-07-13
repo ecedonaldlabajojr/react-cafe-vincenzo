@@ -1,0 +1,47 @@
+.container {
+  padding: 100px 0;
+}
+
+.content {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 1200px;
+}
+
+.details {
+  padding: 1.5rem;
+}
+
+.row {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.img_wrapper {
+  width: 300px;
+}
+
+.row h1,
+.row p {
+  flex: 1;
+  padding-top: 1.5rem;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 15%;
+  top: 15%;
+  font-size: 50px;
+  transition: all 0.2s ease-out;
+}
+
+.closeBtn:hover {
+  transform: rotate(90deg) scale(1.2);
+  transition: all 0.2s ease-out;
+}
