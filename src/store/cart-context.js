@@ -4,31 +4,34 @@ import React, { useReducer } from 'react'
 const CartContext = React.createContext({
     items: [],
     totalPrice: 0,
+    totalQty: 0,
     addItem: item => { },
     removeItem: itemId => { },
     clearCart: () => { },
 })
 
 const cartReducer = (state, action) => {
+    console.log(action.type);
     if (action.type === "ADD__ITEM") {
         const newItem = action.payload;
-        console.log(`ADD ITEM!!`);
         const updatedCartItems = [...state.items];
-        const existingItemIndex = updatedCartItems.findIndex(item => item._id === newItem.itemId);
+        const existingItemIndex = updatedCartItems.findIndex(item => item._id === newItem._id);
 
         let updatedTotalPrice = state.totalPrice + (+newItem.price)
-
+        const updatedTotalQty = state.totalQty + newItem.qty;
         if (existingItemIndex == -1) updatedCartItems.push(newItem);
-        else updatedCartItems[existingItemIndex].qty++;
-
+        else {
+            updatedCartItems[existingItemIndex].qty++;
+        }
         return {
             items: updatedCartItems,
-            totalPrice: updatedTotalPrice
+            totalPrice: updatedTotalPrice,
+            totalQty: updatedTotalQty
         }
 
     } else if (action.type === "REMOVE__ITEM") {
-        const itemId = action.payload;
-        console.log(`REMOVE ITEM!!`);
+        console.log(action.payload);
+        const { _id: itemId } = action.payload;
         let updatedCartItems = [];
         const existingItemIndex = state.items.findIndex(item => item._id === itemId);
         const existingItem = state.items[existingItemIndex];
@@ -55,6 +58,7 @@ export const CartProvider = props => {
     const [cartState, dispatchCartActions] = useReducer(cartReducer, {
         items: [],
         totalPrice: 0,
+        totalQty: 0,
     })
     const addItem = item => {
         dispatchCartActions({
@@ -79,6 +83,7 @@ export const CartProvider = props => {
     const cartContextValue = {
         items: cartState.items,
         totalPrice: cartState.totalPrice,
+        totalQty: cartState.totalQty,
         addItem,
         removeItem,
         clearCart

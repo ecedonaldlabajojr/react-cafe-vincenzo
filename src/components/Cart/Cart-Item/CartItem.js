@@ -4,9 +4,10 @@ import { BsTrashFill } from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib';
 
 const CartItem = (props) => {
-    const { itemId, name, price, qty, img, onQtyChange } = props;
+    const { _id, name, price, qty, img, onQtyChange } = props;
+    console.log(_id);
     const thisItem = {
-        itemId,
+        _id: _id,
         name,
         price,
         img,

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { BsSearch } from 'react-icons/bs';
@@ -8,8 +8,10 @@ import { GiCoffeeBeans } from 'react-icons/gi';
 import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
 import CartDrawer from '../../Cart/CartDrawer';
+import CartContext from '../../../store/cart-context';
 
 function Navbar() {
+    const cartCtx = useContext(CartContext);
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
 
@@ -37,7 +39,18 @@ function Navbar() {
         body.classList.add('no-scroll');
     } else body.classList.remove('no-scroll');
 
+    const [itemQtyBump, setItemQtyBump] = useState(false);
+    let cartQtyClasses = itemQtyBump ? 'nav__cartItemsQty itemAdded' : 'nav__cartItemsQty';
 
+    useEffect(() => {
+        if (!cartCtx.items.length) return;
+        setItemQtyBump(true);
+        const timer = setTimeout(() => {
+            setItemQtyBump(false);
+        }, 300);
+
+        return () => clearTimeout(timer);
+    }, [cartCtx.items])
     return (
         <IconContext.Provider value={{ color: '#fff' }}>
             <CartDrawer onClick={showCartDrawerHandler} showCartDrawer={showCartDrawer} />
@@ -101,6 +114,7 @@ function Navbar() {
                         <li className='nav-item'>
                             <span className='nav-links' onClick={showCartDrawerHandler}>
                                 <RiShoppingBagLine className='nav-user-actions' />
+                                <span className={cartQtyClasses}>{cartCtx.totalQty}</span>
                             </span>
                         </li>
                     </ul>
