@@ -2,12 +2,18 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  position: relative;
-  /* top: -80px; */
   margin-top: -80px;
   height: 100vh;
+}
+
+.welcome-img {
+  position: fixed;
+  z-index: -10;
   width: 100%;
-  background: url("../../images/coffee-hero-img-1.jpg") no-repeat center center;
+  height: 100vh;
+  /* background: url("../../images/coffee-hero-img-1.jpg") no-repeat center center; */
+  /* background: url("../../images/coffee-hero-img-2.jpg") no-repeat center center; */
+  background: url("../../images/coffee-bgc-img-2.jpg") no-repeat center center;
   background-size: cover;
 }
 

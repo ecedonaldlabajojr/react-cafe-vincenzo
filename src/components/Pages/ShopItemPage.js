@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import shopCoffeeBeans from '../../data/shop-coffee-beans';
@@ -13,9 +13,12 @@ const ShopItemPage = () => {
     const cartCtx = useContext(CartContext);
     const product = shopCoffeeBeans.find(product => product._id === productId);
     const [selectedQty, setSelectedQty] = useState(1);
+    const [itemWasAdded, setItemWasAdded] = useState(false);
+    const [addtoCartBtnClicked, setAddtoCartBtnClicked] = useState(false);
 
     const closeHandler = () => history.goBack();
     const addToCartHandler = () => {
+        setAddtoCartBtnClicked(true);
         cartCtx.addItem({
             _id: product._id,
             name: product.name,
@@ -24,6 +27,22 @@ const ShopItemPage = () => {
             qty: selectedQty,
         })
     }
+
+    const qtyOnChangeHandler = (e) => {
+        const inputQty = e.target.value;
+        setSelectedQty(inputQty);
+    }
+
+    useEffect(() => {
+        if (!cartCtx.items.length) return;
+        setItemWasAdded(true);
+        const timer = setTimeout(() => {
+            setItemWasAdded(false);
+            setAddtoCartBtnClicked(false)
+        }, 2000);
+
+        return (() => setItemWasAdded(false))
+    }, [cartCtx.items])
 
     const starItems = []
     for (let x = 0; x < 5; x++) {
@@ -47,9 +66,10 @@ const ShopItemPage = () => {
                     </div>
                     <div className={styles.rowItem}>
                         <div className={styles.actions}>
-                            <p><input type="number" value={selectedQty} min="1" />Qty</p>
+                            <p><input type="number" value={selectedQty} min="1" onChange={qtyOnChangeHandler} />Qty</p>
                             <button onClick={addToCartHandler} className={styles.addToCartBtn}>Add to Cart</button>
                         </div>
+                        {itemWasAdded && addtoCartBtnClicked && <span className={styles.addedNotif}>Item added to Cart!</span>}
                     </div>
                 </div>
                 <div className={styles.details}>

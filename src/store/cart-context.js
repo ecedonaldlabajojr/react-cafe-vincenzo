@@ -11,17 +11,16 @@ const CartContext = React.createContext({
 })
 
 const cartReducer = (state, action) => {
-    console.log(action.type);
     if (action.type === "ADD__ITEM") {
         const newItem = action.payload;
         const updatedCartItems = [...state.items];
         const existingItemIndex = updatedCartItems.findIndex(item => item._id === newItem._id);
 
-        let updatedTotalPrice = state.totalPrice + (+newItem.price)
-        const updatedTotalQty = state.totalQty + newItem.qty;
+        let updatedTotalPrice = state.totalPrice + (+newItem.price * newItem.qty)
+        const updatedTotalQty = state.totalQty + (+newItem.qty);
         if (existingItemIndex == -1) updatedCartItems.push(newItem);
         else {
-            updatedCartItems[existingItemIndex].qty++;
+            updatedCartItems[existingItemIndex].qty = +updatedCartItems[existingItemIndex].qty + (+newItem.qty);
         }
         return {
             items: updatedCartItems,
@@ -30,7 +29,6 @@ const cartReducer = (state, action) => {
         }
 
     } else if (action.type === "REMOVE__ITEM") {
-        console.log(action.payload);
         const { _id: itemId } = action.payload;
         let updatedCartItems = [];
         const existingItemIndex = state.items.findIndex(item => item._id === itemId);
@@ -44,7 +42,13 @@ const cartReducer = (state, action) => {
                 updatedCartItems[existingItemIndex].qty--;
             }
             const updatedTotalPrice = state.totalPrice - existingItem.price;
-            return { items: updatedCartItems, totalPrice: updatedTotalPrice };
+            const updatedTotalQty = state.totalQty - 1;
+
+            return {
+                items: updatedCartItems,
+                totalPrice: updatedTotalPrice,
+                totalQty: updatedTotalQty
+            };
         }
         return state;
     } else if (action.type === "CLEAR__CART") {

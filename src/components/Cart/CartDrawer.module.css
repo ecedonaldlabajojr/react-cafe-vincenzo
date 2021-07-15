@@ -59,6 +59,11 @@
   margin-bottom: 1rem;
 }
 
+.drawer--header > h2 > span {
+  color: #df4759;
+  border-bottom: 2px solid #df4759;
+}
+
 .drawer--internal {
   flex: 1;
   overflow: auto;

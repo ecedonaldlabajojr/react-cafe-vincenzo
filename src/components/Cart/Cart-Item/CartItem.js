@@ -5,7 +5,6 @@ import { IconContext } from 'react-icons/lib';
 
 const CartItem = (props) => {
     const { _id, name, price, qty, img, onQtyChange } = props;
-    console.log(_id);
     const thisItem = {
         _id: _id,
         name,

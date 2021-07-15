@@ -17,7 +17,7 @@ const CartDrawerOverlay = (props) => {
     return <React.Fragment>
         <div className={cartClasses}>
             <div className={styles["drawer--header"]}>
-                <h2>Shopping Bag</h2>
+                <h2>Shopping Bag  {!!cartCtx.totalQty && <span>( {cartCtx.totalQty} item/s )</span>}</h2>
                 <div className={styles.closeIconWrapper} onClick={props.onCloseCart}><GrClose className={styles.closeCartDrawer} /></div>
             </div>
             <div className={styles["drawer--internal"]}>
