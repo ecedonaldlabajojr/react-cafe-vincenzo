@@ -6,7 +6,6 @@ import { tileImages } from '../../images/home-images-src';
 import styles from './Home.module.css';
 
 const heroSections = heroSectionData.map(sectionData => <HeroSection data={sectionData} key={sectionData._id} />)
-console.log(tileImages);
 
 const tileImagesSection = (
     <section className={styles["tile-images-section"]}>

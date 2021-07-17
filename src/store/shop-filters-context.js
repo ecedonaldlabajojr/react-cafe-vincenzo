@@ -1,13 +1,26 @@
 import React, { useState } from 'react'
 
 const shopFiltersContext = React.createContext({
-    appliedFilters: [],
-    removeAppliedFilter: (tagsArray) => { },
+    appliedFilter: [],
+    applyFilter: (filterObject) => { },
+    removeFilter: (filterObject) => { },
 })
 
-const [appliedFilters, setAppliedFilters] = useState([]);
-const removeAppliedFilter = (tagsArray) => {
-    console.log(tagsArray);
+export const ShopFiltersProvider = (props) => {
+    const [appliedFilter, setAppliedFilter] = useState([]);
+    console.table(appliedFilter);
+    const applyFilter = (filterObject) => {
+        let updatedAppliedFilter = [...Object.values(filterObject)];
+        setAppliedFilter(updatedAppliedFilter);
+    }
+
+    const removeFilter = (filterObject) => {
+        setAppliedFilter([]);
+    }
+    const ctxValue = {
+        appliedFilter, applyFilter, removeFilter
+    }
+    return <shopFiltersContext.Provider value={ctxValue}>{props.children}</shopFiltersContext.Provider>
 }
 
-const [appliedFilters, setAppliedFilters] = useState([]);
+export default shopFiltersContext;

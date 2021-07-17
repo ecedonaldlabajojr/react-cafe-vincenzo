@@ -1,15 +1,19 @@
 const shopItemFilters = [
     {
-        keyword: 'colombia',
-        filterName: 'Colombia',
+        tag: 'Colombia',
+        category: 'coffee',
     },
     {
-        keyword: 'brazil',
-        filterName: 'Brazil',
+        tag: 'Brazil',
+        category: 'coffee',
     },
     {
-        keyword: 'ethopia',
-        filterName: 'Ethopia',
+        tag: 'Ethopia',
+        category: 'coffee',
+    },
+    {
+        tag: 'French Press',
+        category: 'gear',
     },
 ];
 
