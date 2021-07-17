@@ -1,5 +1,5 @@
 .section__shoplist-wrapper {
-  padding: 250px 10px;
+  padding: 100px 10px;
 }
 
 .shopItems-container {
@@ -14,10 +14,5 @@
   margin: 0 auto;
   max-width: 1200px;
   display: grid;
-  /* grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); */
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-
-.tree:last-child {
-  justify-self: start;
 }

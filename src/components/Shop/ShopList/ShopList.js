@@ -9,8 +9,12 @@ const sampleItem = {
     price: 450.00,
     img: '/images/coffee-6.jpg'
 }
-const coffeeBeansList = shopCoffeeBeans.map(item => <ShopItem key={item._id} item={item} />)
-const ShopList = () => {
+const ShopList = ({ filter }) => {
+    const coffeeBeansList = shopCoffeeBeans.filter(item => {
+        if (filter.isNullOrWhiteSpace()) return true;
+        else return item.tags.includes(filter)
+    }).map(item => <ShopItem key={item._id} item={item} />);
+
     return (
         <section className={styles["section__shoplist-wrapper"]}>
             <div className={styles["shopItems-container"]}>

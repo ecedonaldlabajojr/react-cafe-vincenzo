@@ -5,6 +5,7 @@ const shopCoffeeBeans = [{
     description: "toffee,vanilla,chocolate,roasted wallnut,buttery",
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis id nisi eget ante euismod faucibus. Fusce ac mollis urna, sit amet porta tellus. Mauris tempor, ligula ac auctor scelerisque, dui.',
     price: 450.00,
+    tags: ["coffee", "brazil"],
 }, {
     _id: 'brazil-minasul',
     name: "Brazil Minasul",
@@ -12,6 +13,7 @@ const shopCoffeeBeans = [{
     description: "toffee,chocolate, roasted nuts",
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum sed accumsan urna, at porttitor purus. Pellentesque id bibendum augue, in blandit mauris. Curabitur varius vitae lorem id condimentum. Cras eleifend.',
     price: 350.00,
+    tags: ["coffee", "brazil"],
 }, {
     _id: 'colombia-el-paraiso',
     name: "Colombia El Paraiso",
@@ -19,6 +21,7 @@ const shopCoffeeBeans = [{
     description: "ginger, lime, molasses",
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin pharetra dignissim auctor. Sed nec feugiat mauris. Sed euismod tellus nec ipsum viverra malesuada. Quisque a magna molestie, consequat nisi eget.',
     price: 650.00,
+    tags: ["coffee", "colombia"],
 }, {
     _id: 'ethopia-guduva-lily',
     name: "Ethopia Guduva Lily",
@@ -26,6 +29,7 @@ const shopCoffeeBeans = [{
     description: "blueberry, earl grey, lychee",
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc sodales dui vel orci aliquam auctor. Phasellus euismod dui ante, non convallis enim volutpat at. Mauris non porttitor ex. Duis sagittis.',
     price: 850.00,
+    tags: ["coffee", "ethopia"],
 }, {
     _id: 'ethopia-sakicha-honey',
     name: "Ethopia Sakicha Honey",
@@ -33,6 +37,7 @@ const shopCoffeeBeans = [{
     description: "apricot, honey, lemon",
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean vitae fringilla leo. Phasellus semper eros dictum nibh viverra volutpat. Nulla et tellus augue. Etiam tempus quam ut mauris hendrerit dictum.',
     price: 800.00,
+    tags: ["coffee", "ethopia"],
 }, {
     _id: 'ethopia-yirgacheffe',
     name: "Ethopia Yirgacheffe",
@@ -40,6 +45,15 @@ const shopCoffeeBeans = [{
     description: "lemon, candy, orange",
     details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, enim vitae faucibus mattis, nibh arcu sodales nulla, vel vestibulum quam felis at erat. Nunc ut lacinia risus, sit amet.',
     price: 950.00,
+    tags: ["coffee", "ethopia"],
+}, {
+    _id: 'french-press',
+    name: "French Press",
+    img: '/images/coffee-1.jpg',
+    description: "250ml french press",
+    details: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed iaculis, enim vitae faucibus mattis, nibh arcu sodales nulla, vel vestibulum quam felis at erat. Nunc ut lacinia risus, sit amet.',
+    price: 950.00,
+    tags: ["gear", "french-press"],
 }];
 
 

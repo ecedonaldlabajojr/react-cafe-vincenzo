@@ -12,11 +12,11 @@
   align-items: center;
   justify-content: center;
   max-width: 1200px;
+  padding: 0 1.5rem;
 }
 
 .details {
-  padding: 1.5rem;
-  padding-right: 2rem;
+  margin-top: 2.5rem;
 }
 
 .row {
@@ -29,6 +29,7 @@
 
 .img_wrapper {
   width: 300px;
+  margin-right: 1rem;
 }
 
 .rowItem {

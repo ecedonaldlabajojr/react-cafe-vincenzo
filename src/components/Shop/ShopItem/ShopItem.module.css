@@ -7,8 +7,10 @@
   border-radius: 3.5px;
   box-shadow: 0 7px 10px rgba(0, 0, 0, 0.35);
   transition: 0.3s ease-in-out;
-  padding-bottom: 20px;
+  padding-bottom: 10px;
   background: #f0f8fe;
+  min-height: 350px;
+  position: relative;
 }
 
 .card img {
@@ -21,20 +23,24 @@
   letter-spacing: 1.1px;
   text-transform: uppercase;
   font-size: 18px;
+  margin-top: 0.5rem;
 }
 
 .item-price {
   font-size: 18px;
   letter-spacing: 1.2px;
+  position: absolute;
+  bottom: 2.5%;
+  width: 100%;
 }
 
 .item-desc {
   max-width: 90%;
   line-height: 1.2;
   font-size: 14px;
-  margin: 10px auto;
+  margin: 5px auto;
   height: 30px;
-  overflow: hidden;
+  overflow: ellipsis;
   display: inline-block;
 }
 
