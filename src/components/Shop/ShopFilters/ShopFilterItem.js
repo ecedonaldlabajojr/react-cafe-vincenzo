@@ -15,7 +15,6 @@ const ShopFilterItem = (props) => {
         tag: formattedTag,
     }
 
-    console.log(appliedFilters);
     let isChecked = appliedFilters[0] === category && appliedFilters[1] === formattedTag;
 
     const selectFilterHandler = (e) => {

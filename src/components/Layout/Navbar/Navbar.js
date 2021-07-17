@@ -70,7 +70,7 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                             <NavLink
-                                to='/services'
+                                to='/menu'
                                 className='nav-links'
                                 onClick={closeMobileMenu}>
                                 Menu
@@ -87,7 +87,7 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                             <NavLink
-                                to='/'
+                                to='/brew-guide'
                                 className='nav-links'
                                 onClick={closeMobileMenu}>
                                 Brew Guide
@@ -97,7 +97,7 @@ function Navbar() {
                     <ul className={click ? 'nav-menu nav-right active' : 'nav-menu nav-right'}>
                         <li className='nav-item'>
                             <Link
-                                to='/'
+                                to='/user'
                                 className='nav-links'
                                 onClick={closeMobileMenu}>
                                 <AiOutlineUser className='nav-user-actions' />
@@ -105,7 +105,7 @@ function Navbar() {
                         </li>
                         <li className='nav-item'>
                             <Link
-                                to='/'
+                                to='/search'
                                 className='nav-links'
                                 onClick={closeMobileMenu}>
                                 <BsSearch className='nav-user-actions' />
