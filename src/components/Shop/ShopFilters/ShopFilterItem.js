@@ -24,8 +24,8 @@ const ShopFilterItem = (props) => {
 
     return (
         <div className={styles["filter-wrapper"]}>
-            <input type="checkbox" id="filter" name="filter" onChange={selectFilterHandler} checked={isChecked} />
-            <label htmlFor="filter">{tag}</label>
+            <input type="checkbox" id={formattedTag} name={formattedTag} onChange={selectFilterHandler} checked={isChecked} />
+            <label htmlFor={formattedTag}>{tag}</label>
         </div>
     )
 }

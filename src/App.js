@@ -7,6 +7,7 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import ScrollToTop from './components/UI/ScrollToTop'
 import Footer from './components/Layout/Footer/Footer'
 import AvailableSoon from './components/Pages/AvailableSoon';
+import BrewGuide from './components/BrewGuide/BrewGuideTabs'
 
 String.prototype.isNullOrWhiteSpace = function () { return (!this || this.length === 0 || /^\s*$/.test(this)) }
 
@@ -21,7 +22,7 @@ function App() {
         <Route path='/shop/roasted-beans/:productId' component={ShopItemPage} />
 
         <Route path='/search' component={AvailableSoon} />
-        <Route path='/brew-guide' component={AvailableSoon} />
+        <Route path='/brew-guide' component={BrewGuide} />
         <Route path='/menu' component={AvailableSoon} />
         <Route path='/user' component={AvailableSoon} />
       </Switch>

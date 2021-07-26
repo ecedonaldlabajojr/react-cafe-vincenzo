@@ -89,6 +89,7 @@ function Navbar() {
                             <NavLink
                                 to='/brew-guide'
                                 className='nav-links'
+                                activeClassName='nav-active'
                                 onClick={closeMobileMenu}>
                                 Brew Guide
                             </NavLink>
