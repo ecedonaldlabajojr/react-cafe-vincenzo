@@ -1,18 +1,18 @@
-p {
+.container p {
   display: inline-block;
   width: 100%;
   word-break: break-word;
 }
 
-img {
+.container img {
   max-width: 300px;
 }
 
-h2 {
+.container h2 {
   padding: 0px 0 5px 0px;
 }
 
-h3 {
+.container h3 {
   margin-bottom: 10px;
 }
 

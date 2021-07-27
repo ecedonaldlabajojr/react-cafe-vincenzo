@@ -44,8 +44,8 @@
   left: 50%;
   transform: translateX(-50%);
   width: calc(100% + 2px);
-  height: 5px;
-  background: #8a624a;
+  height: 6px;
+  background: #1c2237;
 }
 
 button {

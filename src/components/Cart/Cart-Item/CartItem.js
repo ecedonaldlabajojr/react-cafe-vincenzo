@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React from 'react'
 import styles from './CartItem.module.css'
 import { BsTrashFill } from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib';
