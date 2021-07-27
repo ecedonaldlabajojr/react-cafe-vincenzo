@@ -1,11 +1,11 @@
-import Tabs from '../BrewGuide/BrewGuideTabs'
+import BrewGuideTabs from '../BrewGuide/BrewGuideTabs'
 
 
 import React from 'react'
 
 const BrewGuide = () => {
     return (
-        <Tabs />
+        <BrewGuideTabs />
     )
 }
 
