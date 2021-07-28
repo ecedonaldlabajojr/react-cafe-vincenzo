@@ -4,11 +4,15 @@ import styles from './ShopList.module.css'
 import shopCoffeeBeans from '../../../data/shop-coffee-beans';
 import shopFiltersContext from '../../../store/shop-filters-context';
 
-const ShopList = () => {
+const ShopList = (props) => {
     const shopFiltersCtx = useContext(shopFiltersContext);
     const appliedFilters = shopFiltersCtx.appliedFilter;
 
     let shownProducts = [];
+    // let filteredProducts = [];
+    // if (!props.query.isNullOrWhiteSpace()) filteredProducts = shopCoffeeBeans.filter(product => product.name.search(`/${props.query}/i`));
+
+    // console.log(filteredProducts);
     if (appliedFilters.length) {
         shownProducts = shopCoffeeBeans.filter(item => {
             return (item.keywords.every(keyword => appliedFilters.includes(keyword)));

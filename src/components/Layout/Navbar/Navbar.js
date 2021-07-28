@@ -9,12 +9,15 @@ import './Navbar.css';
 import { IconContext } from 'react-icons/lib';
 import CartDrawer from '../../Cart/CartDrawer';
 import CartContext from '../../../store/cart-context';
+import SearchTab from '../SearchTab/SearchTab'
 
 function Navbar() {
     const cartCtx = useContext(CartContext);
     const [click, setClick] = useState(false);
     const [button, setButton] = useState(true);
+    const [showSearchTab, setShowSearchTab] = useState(false);
 
+    const toggleSearchTab = () => setShowSearchTab(!showSearchTab);
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -54,6 +57,7 @@ function Navbar() {
     return (
         <IconContext.Provider value={{ color: '#fff' }}>
             <CartDrawer onClick={showCartDrawerHandler} showCartDrawer={showCartDrawer} />
+            {showSearchTab && <SearchTab toggleSearchTab={toggleSearchTab} />}
             <nav className='navbar'>
                 <div className='navbar-container container'>
                     <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
@@ -105,12 +109,12 @@ function Navbar() {
                             </Link>
                         </li>
                         <li className='nav-item'>
-                            <Link
+                            <span
                                 to='/search'
                                 className='nav-links'
-                                onClick={closeMobileMenu}>
+                                onClick={toggleSearchTab}>
                                 <BsSearch className='nav-user-actions' />
-                            </Link>
+                            </span>
                         </li>
                         <li className='nav-item'>
                             <span className='nav-links' onClick={showCartDrawerHandler}>
