@@ -1,0 +1,32 @@
+.highlights__container {
+  background-color: #f8f8f8;
+}
+.highlights__wrapper {
+  padding: 3rem 0;
+  display: flex;
+  max-width: 90vw;
+  margin: 0 auto;
+  justify-content: center;
+  align-items: stretch;
+  text-align: center;
+}
+
+.highlight {
+  flex: 1;
+}
+
+.highlightIcon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.highlight h3 {
+  margin-bottom: 20px;
+}
+
+.highlight p {
+  line-height: 1.2;
+  max-width: 250px;
+  margin: 0 auto;
+  font-size: 14px;
+}
