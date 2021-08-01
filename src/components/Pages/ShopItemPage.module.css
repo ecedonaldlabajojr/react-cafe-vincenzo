@@ -32,6 +32,10 @@
   margin-right: 1rem;
 }
 
+.img_wrapper img {
+  width: 100%;
+}
+
 .rowItem {
   flex: 1;
   padding-top: 1.5rem;
