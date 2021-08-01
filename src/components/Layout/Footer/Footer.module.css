@@ -3,13 +3,10 @@
 }
 
 footer {
-  /* background-color: hsl(233, 47%, 7%); */
-  background: url("../../../images/coffee-footer-img.jpg") no-repeat center
-    center;
-  padding-top: 3rem;
-  color: white;
+  color: black;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .footer__top {
@@ -17,7 +14,7 @@ footer {
   width: 100%;
   flex: 1;
   display: flex;
-  margin: 0 auto;
+  margin: 3rem auto 0;
   align-items: top;
   justify-content: center;
   padding: 0 1rem;
@@ -30,17 +27,14 @@ footer {
 
 p {
   line-height: 28px;
-  font-family: "Nunito", sans-serif;
 }
 
 .row__header {
-  font-size: 30px;
   font-weight: 700;
   margin-bottom: 2rem;
 }
 
 .footer-bottom-wrapper {
-  background-color: rgba(0, 0, 0, 0.5);
   height: 120px;
   margin-top: 3rem;
 }
@@ -81,4 +75,20 @@ p {
 
 .iconCentered p {
   margin-left: 5px;
+}
+
+.footer__bgc-1 {
+  background: url("../../../images/footer-bg-1.jpg") no-repeat center center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.footer__bgc-2 {
+  background: url("../../../images/footer-bg.png") no-repeat center center;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
 }

@@ -8,7 +8,7 @@
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-auto-rows: minmax(100px, auto);
-  grid-gap: 10px;
+  grid-gap: 6px;
 }
 
 .imgWrapper {
@@ -49,32 +49,73 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  transition: all 0.5s ease-out;
-  filter: opacity(80%);
-}
-
-.imgBgc:hover {
-  transition: all 0.5s ease-out;
-  filter: opacity(100%);
 }
 
 .one .imgBgc {
-  background: url("../../images/mosaic-1.jpg") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../images/mosaic-1.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 .two .imgBgc {
-  background: url("../../images/mosaic-2.jpg") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url("../../images/mosaic-2.jpg") no-repeat center center;
   background-size: cover;
 }
 .three .imgBgc {
-  background: url("../../images/coffee-2.jpg") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../images/coffee-2.jpg") no-repeat center center;
   background-size: cover;
 }
 .four .imgBgc {
-  background: url("../../images/coffee-3.jpg") no-repeat center center;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../images/coffee-3.jpg") no-repeat center center;
   background-size: cover;
 }
 .five .imgBgc {
-  background: url("../../images/coffee-4.jpg") no-repeat center bottom;
+  background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../../images/coffee-4.jpg") no-repeat center bottom;
   background-size: cover;
+}
+
+.imgCaption {
+  text-align: left;
+  position: absolute;
+  left: 20px;
+  bottom: 20px;
+  font-family: "Marcellus", sans-serif;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgCaption p {
+  font-size: 2rem;
+  color: #fff;
+  max-width: 250px;
+  line-height: 1;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.imgCaption .captionLink {
+  text-decoration: none;
+  color: black;
+  font-weight: 700;
+  display: block;
+  padding: 14px 20px;
+  color: #fff;
+  letter-spacing: 1.2px;
+}
+
+.imgCaption button {
+  font-family: inherit;
+  background-color: #276afb;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+  border-radius: 30px;
+  transition: all 0.25s ease-out;
+}
+.imgCaption button:hover {
+  transform: translateY(-3px);
+  transition: all 0.25s ease-out;
 }
