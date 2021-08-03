@@ -1,5 +1,5 @@
 .newsletter-container {
-  padding: 4rem 0;
+  padding: 4rem 0.25rem;
   margin: 0 auto;
   text-align: center;
   background-color: #f8f8f8;
@@ -32,6 +32,7 @@
 .newsletter-container p {
   font-size: 14px;
   margin-bottom: 6px;
+  line-height: 1.2;
 }
 
 .subscribe__form {

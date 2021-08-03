@@ -9,34 +9,37 @@ footer {
   position: relative;
 }
 
+footer p {
+  font-family: "Nunito", sans-serif;
+  line-height: 24px;
+  font-size: 14px;
+}
+
 .footer__top {
   max-width: var(--max_width);
   width: 100%;
   flex: 1;
   display: flex;
-  margin: 3rem auto 0;
+  margin: 4rem auto 0;
   align-items: top;
   justify-content: center;
-  padding: 0 1rem;
+  padding-right: 15%;
+  padding-left: 20px;
 }
 
 .footerRow {
   flex: 1;
-  text-align: center;
-}
-
-p {
-  line-height: 28px;
+  text-align: left;
+  padding-right: 16px;
 }
 
 .row__header {
   font-weight: 700;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .footer-bottom-wrapper {
   height: 120px;
-  margin-top: 3rem;
 }
 
 .footer__bottom {
@@ -44,21 +47,31 @@ p {
   height: 100%;
   max-width: var(--max_width);
   margin: 0 auto;
-  align-items: center;
+  align-items: flex-end;
+  padding: 0 20px 6px;
+}
+
+.footer__bottom-row.designed {
+  text-align: right;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.footer__bottom-row.designed p {
+  margin-right: 5px;
 }
 
 .footer__bottom-row {
   flex: 1;
-  text-align: center;
-}
-
-.footer__bottom-social {
-  font-size: 30px;
+  text-align: left;
+  font-size: 14px;
 }
 
 .social-icon {
+  font-size: 22px;
   transition: all 0.25s ease-out;
-  margin: 0 1rem;
+  margin-right: 1.5rem;
   cursor: pointer;
 }
 
@@ -70,7 +83,7 @@ p {
 .iconCentered {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .iconCentered p {
@@ -80,6 +93,7 @@ p {
 .footer__bgc-1 {
   background: url("../../../images/footer-bg-1.jpg") no-repeat center center;
   position: absolute;
+  background-size: cover;
   width: 100%;
   height: 100%;
   z-index: -1;
@@ -91,4 +105,35 @@ p {
   width: 100%;
   height: 100%;
   z-index: -1;
+}
+
+@media screen and (max-width: 768px) {
+  .footer__top {
+    padding-right: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer__top {
+    flex-direction: column;
+    padding-left: 0.5rem;
+  }
+
+  .row__header {
+    font-weight: 700;
+    margin-bottom: 0;
+  }
+
+  .footerRow {
+    margin-bottom: 2rem;
+  }
+
+  .footer__bottom-row.designed {
+    flex-direction: column;
+  }
+
+  .footer__bottom {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
 }

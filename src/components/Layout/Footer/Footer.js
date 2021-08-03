@@ -30,9 +30,12 @@ const Footer = () => {
           </div>
         </div>
         <div className={styles.footerRow}>
-          <p className={styles["row__header"]}>Locations</p>
-          <p>Eskina unahan</p>
-          <p>Purok semento</p>
+          <p className={styles["row__header"]}>Follow Us</p>
+          <div>
+            <AiFillFacebook className={styles["social-icon"]} />
+            <FiTwitter className={styles["social-icon"]} />
+            <FaInstagram className={styles["social-icon"]} />
+          </div>
         </div>
       </div>
       <div className={styles["footer-bottom-wrapper"]}>
@@ -40,17 +43,9 @@ const Footer = () => {
           <div className={styles["footer__bottom-row"]}>
             <p>© {thisYear} Cafe Vincenzo All rights reserved.</p>
           </div>
-          <div className={styles["footer__bottom-row"]}>
-            <div className={styles["footer__bottom-social"]}>
-              <AiFillFacebook className={styles["social-icon"]} />
-              <FiTwitter className={styles["social-icon"]} />
-              <FaInstagram className={styles["social-icon"]} />
-            </div>
-          </div>
-          <div className={styles["footer__bottom-row"]}>
-            <p style={{ fontStyle: "italic" }}>
-              Designed by Donald P. Labajo Jr.
-            </p>
+          <div className={`${styles["footer__bottom-row"]} ${styles.designed}`}>
+            <p>Designed by:</p>
+            <p>Donald P. Labajo Jr.</p>
           </div>
         </div>
       </div>
