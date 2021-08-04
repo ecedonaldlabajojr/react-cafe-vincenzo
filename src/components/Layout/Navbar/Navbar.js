@@ -99,7 +99,7 @@ function Navbar() {
                             </NavLink>
                         </li>
                     </ul>
-                    <ul className={click ? 'nav-menu nav-right active' : 'nav-menu nav-right'}>
+                    {/* <ul className={click ? 'nav-menu nav-right active' : 'nav-menu nav-right'}>
                         <li className='nav-item'>
                             <Link
                                 to='/user'
@@ -122,7 +122,7 @@ function Navbar() {
                                 <span className={cartQtyClasses}>{cartCtx.totalQty}</span>
                             </span>
                         </li>
-                    </ul>
+                    </ul> */}
                 </div>
             </nav>
         </IconContext.Provider>
