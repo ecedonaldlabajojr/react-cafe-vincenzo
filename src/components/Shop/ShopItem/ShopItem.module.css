@@ -9,7 +9,7 @@
   transition: 0.3s ease-in-out;
   padding-bottom: 10px;
   background: #f0f8fe;
-  min-height: 350px;
+  min-height: 380px;
   position: relative;
 }
 
@@ -38,7 +38,7 @@
   max-width: 90%;
   line-height: 1.2;
   font-size: 14px;
-  margin: 5px auto;
+  margin: 0 auto;
   height: 30px;
   overflow: ellipsis;
   display: inline-block;
@@ -51,4 +51,16 @@
 .navlink {
   color: inherit;
   text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+  .card img {
+    max-width: 50%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .card img {
+    max-width: 60%;
+  }
 }

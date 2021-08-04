@@ -5,7 +5,7 @@
   max-width: 900px;
   min-height: 50vh;
   background: #f1f1f1;
-  margin: 100px auto;
+  margin: 50px auto;
   word-break: break-all;
   border: 1px solid rgba(0, 0, 0, 0.274);
 }
@@ -74,6 +74,7 @@ button {
   display: inline-block;
   width: 100%;
   word-break: break-word;
+  line-height: 1.5;
 }
 .active-content {
   display: block;
@@ -87,4 +88,28 @@ button {
   background-color: rgb(235, 235, 235);
   padding: 10px;
   margin: 1.5rem 0;
+}
+
+@media screen and (max-width: 480px) {
+  .container {
+    margin: 20px auto;
+  }
+  .bloc-tabs button {
+    font-size: 15px;
+    word-break: break-word;
+  }
+
+  .container p {
+    font-size: 14px;
+  }
+
+  .container h2 {
+    font-size: 20px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .bloc-tabs button {
+    font-size: 12px;
+  }
 }
