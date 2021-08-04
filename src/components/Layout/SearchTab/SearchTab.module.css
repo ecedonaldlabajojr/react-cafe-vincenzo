@@ -51,12 +51,23 @@
 .searchBar {
   display: flex;
   justify-content: center;
+  position: relative;
 }
 
 .searchIcon {
   font-size: 30px;
-  position: relative;
-  right: 3rem;
+  position: absolute;
+  right: 0;
   top: 0.25rem;
   cursor: pointer;
+}
+
+.inputWrapper {
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 768px) {
+  .searchWrap input {
+    width: 100%;
+  }
 }
