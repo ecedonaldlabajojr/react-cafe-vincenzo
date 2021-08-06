@@ -48,15 +48,13 @@
   justify-content: center;
   list-style: none;
   text-align: center;
-  justify-content: flex-end;
+  min-width: 960px;
 }
 
-.nav-right {
-  margin-right: 10px;
-}
-
-.nav-menu.nav-right > .nav-item > .nav-links {
-  padding: 0 15px;
+.nav-group {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
 }
 
 .nav-user-actions {
@@ -65,17 +63,12 @@
 
 .nav-item {
   height: 80px;
-  border-bottom: 5px solid transparent;
   text-transform: uppercase;
+  flex: 1;
 }
 
 .nav-active {
   border-bottom: 3.5px solid #fff;
-}
-
-.nav-links:hover {
-  border-bottom: 3.5px solid #fff;
-  cursor: pointer;
 }
 
 .nav-links {
@@ -83,10 +76,36 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0.5rem 1.6rem;
   height: 100%;
   margin-left: 10px;
   margin-right: 10px;
+  position: relative;
+  justify-content: flex-end;
+}
+
+.nav-links::after {
+  position: absolute;
+  display: none;
+  left: 50%;
+  bottom: 10%;
+  transform: translate(-50%, -50%);
+  content: "";
+  height: 2px;
+  width: 100px;
+  background: white;
+}
+
+.nav-links:hover {
+  transform: scale(1.05);
+  transition: all 0.2s ease-out;
+}
+
+.nav-links:hover::after {
+  display: block;
+}
+
+.nav-center {
+  margin-right: 10%;
 }
 
 .fa-bars {

@@ -5,7 +5,7 @@ import { BsSearch } from 'react-icons/bs';
 import { RiShoppingBagLine } from 'react-icons/ri'
 import { AiOutlineUser } from 'react-icons/ai';
 import { GiCoffeeBeans } from 'react-icons/gi';
-import styles from './Navbar.module.scss';
+import "./Navbar.css";
 import { IconContext } from 'react-icons/lib';
 import CartDrawer from '../../Cart/CartDrawer';
 import CartContext from '../../../store/cart-context';
@@ -43,7 +43,7 @@ function Navbar() {
     } else body.classList.remove('no-scroll');
 
     const [itemQtyBump, setItemQtyBump] = useState(false);
-    let cartQtyClasses = itemQtyBump ? `${styles["nav__cartItemsQty"]} ${styles.itemAdded}` : `${styles["nav__cartItemsQty"]}`;
+    let cartQtyClasses = itemQtyBump ? 'nav__cartItemsQty itemAdded' : 'nav__cartItemsQty';
 
     useEffect(() => {
         if (!cartCtx.items.length) return;
@@ -58,69 +58,72 @@ function Navbar() {
         <IconContext.Provider value={{ color: '#fff' }}>
             <CartDrawer onClick={showCartDrawerHandler} showCartDrawer={showCartDrawer} />
             {showSearchTab && <SearchTab toggleSearchTab={toggleSearchTab} />}
-            <nav className={styles.navbar}>
-                <div className={`${styles["navbar-container"]} ${styles.container}`}>
-                    <div className={`${styles["menu-icon"]}`} onClick={handleClick}>
+            <nav className='navbar'>
+                <div className='navbar-container container'>
+                    <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+                        <GiCoffeeBeans /> &nbsp; VINCENZO
+                    </Link>
+                    <div className='menu-icon' onClick={handleClick}>
                         {click ? <FaTimes /> : <FaBars />}
                     </div>
-                    <ul className={click ? `${styles["nav-menu"]} ${styles.active}` : `${styles["nav-menu"]}`}>
-                        {/* ______________________________________________________________________________ */}
-                        <li className={styles["nav-left"]}>
-                            <Link to='/' className={styles["navbar-logo"]} onClick={closeMobileMenu}>
-                                <GiCoffeeBeans /> &nbsp; VINCENZO
-                            </Link>
-
-                        </li>
-                        {/* ______________________________________________________________________________ */}
-                        <li className={styles["nav-center"]}>
-                            <div className={styles["nav-item"]}>
-                                <Link to='/' className={styles["nav-links"]} onClick={closeMobileMenu}>
+                    <ul className={click ? 'nav-menu active' : 'nav-menu'}>
+                        <div className={'nav-group nav-center'}>
+                            <li className='nav-item'>
+                                <Link to='/' className='nav-links' onClick={closeMobileMenu}>
                                     Home
                                 </Link>
-                            </div>
-                            <div className={styles["nav-item"]}>
-                                <NavLink to='/menu' className={styles["nav-links"]} activeClassName={styles["nav-active"]} onClick={closeMobileMenu}> Menu
+                            </li>
+                            <li className='nav-item'>
+                                <NavLink
+                                    to='/menu'
+                                    className='nav-links'
+                                    onClick={closeMobileMenu}>
+                                    Menu
                                 </NavLink>
-                            </div>
-                            <div className={styles["nav-item"]}>
-                                <NavLink to='/shop' className={styles["nav-links"]} activeClassName={styles["nav-active"]} onClick={closeMobileMenu}>
+                            </li>
+                            <li className='nav-item'>
+                                <NavLink
+                                    to='/shop'
+                                    className='nav-links'
+                                    activeClassName='nav-active'
+                                    onClick={closeMobileMenu}>
                                     SHOP
                                 </NavLink>
-                            </div>
-                            <div className={styles["nav-item"]}>
+                            </li>
+                            <li className='nav-item'>
                                 <NavLink
                                     to='/brew-guide'
-                                    className={styles["nav-links"]} activeClassName={styles["nav-active"]}
+                                    className='nav-links'
+                                    activeClassName='nav-active'
                                     onClick={closeMobileMenu}>
                                     Brew Guide
                                 </NavLink>
-                            </div>
-                        </li>
-                        {/* ______________________________________________________________________________ */}
-                        <li className={styles["nav-right"]}>
-                            <div className={styles["nav-item"]}>
+                            </li>
+                        </div>
+                        <div className={'nav-right nav-group'}>
+                            <li className='nav-item'>
                                 <Link
                                     to='/user'
-                                    className={styles["nav-links"]}
+                                    className='nav-links'
                                     onClick={closeMobileMenu}>
                                     <AiOutlineUser className='nav-user-actions' />
                                 </Link>
-                            </div>
-                            <div className={styles["nav-item"]}>
+                            </li>
+                            <li className='nav-item'>
                                 <span
                                     to='/search'
-                                    className={styles["nav-links"]}
+                                    className='nav-links'
                                     onClick={toggleSearchTab}>
                                     <BsSearch className='nav-user-actions' />
                                 </span>
-                            </div>
-                            <div className={styles["nav-item"]}>
-                                <span className={styles["nav-links"]} onClick={showCartDrawerHandler}>
-                                    <RiShoppingBagLine className={styles["nav-user-actions"]} />
+                            </li>
+                            <li className='nav-item'>
+                                <span className='nav-links' onClick={showCartDrawerHandler}>
+                                    <RiShoppingBagLine className='nav-user-actions' />
                                     <span className={cartQtyClasses}>{cartCtx.totalQty}</span>
                                 </span>
-                            </div>
-                        </li>
+                            </li>
+                        </div>
                     </ul>
                 </div>
             </nav>
