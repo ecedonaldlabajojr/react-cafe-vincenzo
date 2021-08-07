@@ -1,6 +1,6 @@
 import React from 'react'
-import { Button } from '../UI/Button/Button';
-import styles from './WelcomeHero.module.css'
+import { Link } from 'react-router-dom'
+import styles from './WelcomeHero.module.scss'
 
 const WelcomeHero = () => {
     return (
@@ -8,7 +8,11 @@ const WelcomeHero = () => {
             <div className={styles["welcome-img"]} />
             <div className={styles["landing__text-wrapper"]}>
                 <h1>Brewed to perfection.</h1>
-                <Button buttonSize="btn--wide" buttonStyle="btn--primary" buttonColor="blue">SHOP</Button>
+                <button>
+                    <Link to="/shop" className={styles.captionLink}>
+                        Shop Now
+                    </Link>
+                </button>
             </div>
         </section>
     )

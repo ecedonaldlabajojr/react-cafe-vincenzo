@@ -2,7 +2,7 @@ import React, { useContext, useState, useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import shopCoffeeBeans from '../../data/shop-coffee-beans';
-import styles from './ShopItemPage.module.css'
+import styles from './ShopItemPage.module.scss'
 import { IoIosCloseCircleOutline } from 'react-icons/io'
 import { BsStarFill } from 'react-icons/bs'
 import CartContext from '../../store/cart-context';
