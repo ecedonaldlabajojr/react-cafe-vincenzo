@@ -17,7 +17,10 @@ function Navbar() {
     const [button, setButton] = useState(true);
     const [showSearchTab, setShowSearchTab] = useState(false);
 
-    const toggleSearchTab = () => setShowSearchTab(!showSearchTab);
+    const toggleSearchTab = () => {
+        closeMobileMenu();
+        setShowSearchTab(!showSearchTab);
+    }
     const handleClick = () => setClick(!click);
     const closeMobileMenu = () => setClick(false);
 
@@ -34,6 +37,7 @@ function Navbar() {
 
     const [showCartDrawer, setShowCartDrawer] = useState(false);
     const showCartDrawerHandler = () => {
+        closeMobileMenu();
         setShowCartDrawer(!showCartDrawer);
     }
 
