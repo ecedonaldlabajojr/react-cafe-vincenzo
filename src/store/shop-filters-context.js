@@ -8,7 +8,6 @@ const shopFiltersContext = React.createContext({
 
 export const ShopFiltersProvider = (props) => {
     const [appliedFilter, setAppliedFilter] = useState([]);
-    console.table(appliedFilter);
     const applyFilter = (filterObject) => {
         let updatedAppliedFilter = [...Object.values(filterObject)];
         setAppliedFilter(updatedAppliedFilter);

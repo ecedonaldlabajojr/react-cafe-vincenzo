@@ -1,6 +1,6 @@
 import React, { useContext } from 'react'
 import ReactDOM from 'react-dom';
-import styles from './CartDrawer.module.css';
+import styles from './CartDrawer.module.scss';
 import { GrClose } from 'react-icons/gr';
 import { IoBagCheckOutline } from 'react-icons/io5';
 import CartItemsList from './Cart-List/CartItemsList';
