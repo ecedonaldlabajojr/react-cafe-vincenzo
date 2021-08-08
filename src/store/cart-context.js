@@ -7,6 +7,7 @@ const CartContext = React.createContext({
     totalQty: 0,
     addItem: item => { },
     removeItem: itemId => { },
+    trashItem: itemId => { },
     clearCart: () => { },
 })
 
@@ -51,6 +52,18 @@ const cartReducer = (state, action) => {
             };
         }
         return state;
+
+    } else if (action.type === "TRASH__ITEM") {
+        const itemId = action.payload;
+        const existingItem = state.items.find(item => item._id === itemId);
+        const itemTotalPrice = existingItem.price * existingItem.qty;
+        return ({
+            items: state.items.filter(item => item._id !== itemId),
+            totalPrice: state.totalPrice - itemTotalPrice,
+            totalQty: state.totalQty - existingItem.qty
+        })
+
+
     } else if (action.type === "CLEAR__CART") {
         console.log(`CLEAR CART!!`);
         return state;
@@ -84,13 +97,21 @@ export const CartProvider = props => {
         })
     }
 
+    const trashItem = itemId => {
+        dispatchCartActions({
+            type: "TRASH__ITEM",
+            payload: itemId,
+        })
+    }
+
     const cartContextValue = {
         items: cartState.items,
         totalPrice: cartState.totalPrice,
         totalQty: cartState.totalQty,
         addItem,
         removeItem,
-        clearCart
+        clearCart,
+        trashItem
     }
     return <CartContext.Provider value={cartContextValue}>{props.children}</CartContext.Provider>
 }

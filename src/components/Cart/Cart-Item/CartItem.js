@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styles from './CartItem.module.css'
 import { BsTrashFill } from 'react-icons/bs'
 import { IconContext } from 'react-icons/lib';
+import CartContext from '../../../store/cart-context'
 
 const CartItem = (props) => {
+    const cartCtx = useContext(CartContext);
     const { _id, name, price, qty, img, onQtyChange } = props;
     const thisItem = {
         _id: _id,
@@ -20,6 +22,8 @@ const CartItem = (props) => {
             })
         }
     }
+
+    const trashHandler = () => cartCtx.trashItem(_id);
 
     return (
         <IconContext.Provider value={{ color: 'black' }}>
@@ -40,7 +44,7 @@ const CartItem = (props) => {
                     </div>
                 </div>
                 <div className={styles["item-action"]}>
-                    <button className={styles["item-remove-btn"]}><BsTrashFill className={styles.trashIcon} /></button>
+                    <button className={styles["item-remove-btn"]} onClick={trashHandler}><BsTrashFill className={styles.trashIcon} /></button>
                 </div>
             </div>
         </IconContext.Provider>
